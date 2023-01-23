@@ -19,22 +19,6 @@ resource "aws_internet_gateway" "some_ig" {
   )
 }
 
-# # Elastic IP for NAT Gateway
-# resource "aws_eip" "nat_gateway1" {
-#   vpc = true
-# }
-
-# # Create NAT Gateway
-# resource "aws_nat_gateway" "nat_gateway" {
-#   allocation_id = aws_eip.nat_gateway1.id
-#   subnet_id     = aws_subnet.some_public_subnet.id
-#   tags = merge(
-#     tomap({ "Name" = "some NAT gateway" }),
-#     var.default_tags
-
-#   )
-# }
-
 # Create VPC endpoints for SSM access from private EC2
 ## ssm VPC endpoint
 resource "aws_vpc_endpoint" "ssm_vpc_ep" {

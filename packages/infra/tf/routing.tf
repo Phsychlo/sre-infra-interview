@@ -28,13 +28,6 @@ resource "aws_route_table" "nat_gateway" {
   vpc_id = aws_vpc.some_custom_vpc.id
 }
 
-# # Route table pointing default destination to NAT GW
-# resource "aws_route" "nat_gateway_route" {
-#   nat_gateway_id         = aws_nat_gateway.nat_gateway.id
-#   route_table_id         = aws_route_table.nat_gateway.id
-#   destination_cidr_block = "0.0.0.0/0"
-# }
-
 # Associate route table with private subnet 02
 resource "aws_route_table_association" "private" {
   subnet_id      = aws_subnet.some_private_subnet2.id
