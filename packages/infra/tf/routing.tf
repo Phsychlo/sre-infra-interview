@@ -27,8 +27,7 @@ resource "aws_route_table_association" "public_1_rt_b" {
 resource "aws_route_table" "nat_gateway" {
   vpc_id = aws_vpc.some_custom_vpc.id
   
-  tags =
-  {
+  tags = {
     Name = "Private Route Table"
   }
 }
