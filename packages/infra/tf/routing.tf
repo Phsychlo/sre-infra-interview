@@ -26,6 +26,10 @@ resource "aws_route_table_association" "public_1_rt_b" {
 # Create a route table
 resource "aws_route_table" "nat_gateway" {
   vpc_id = aws_vpc.some_custom_vpc.id
+
+  tags = {
+    Name = "Private Route Table"
+  }
 }
 
 # # Route table pointing default destination to NAT GW
